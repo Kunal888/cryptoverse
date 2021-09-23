@@ -17,6 +17,9 @@ const Exchanges = () => {
 
   return (
     <>
+      <Typography.Title level={2} className="home-title">
+        Cryptocurrency Exchanges
+      </Typography.Title>
       <Row>
         <Col span={6}>Exchanges</Col>
         <Col span={6}>24h Trade Volume</Col>

@@ -3,6 +3,8 @@ import { Layout, Typography, Space } from "antd";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Exchanges from "./components/Exchanges";
+import Stocks from "./components/Stocks";
+import StockDetails from "./components/StockDetails";
 import Cryptocurrencies from "./components/Cryptocurrencies";
 import CryptoDetails from "./components/CryptoDetails";
 import News from "./components/News";
@@ -24,6 +26,12 @@ function App() {
               <Route exact path="/exchanges">
                 <Exchanges />
               </Route>
+              <Route exact path="/stocks">
+                <Stocks />
+              </Route>
+              <Route exact path="/stocks/:stockId">
+                <StockDetails />
+              </Route>
               <Route exact path="/cryptocurrencies">
                 <Cryptocurrencies />
               </Route>
@@ -41,7 +49,7 @@ function App() {
             level={5}
             style={{ color: "white", textAlign: "center" }}
           >
-            <Link to="/">Cryptoverse Inc.</Link> <br />
+            {/* <Link to="/">Cryptoverse Inc.</Link> <br /> */}
           </Typography.Title>
           <Space
             style={{
@@ -51,6 +59,7 @@ function App() {
             }}
           >
             <Link to="/">Home</Link>
+            <Link to="/stocks">Stocks</Link>
             <Link to="/cryptocurrencies">Cryptocurrencies</Link>
             <Link to="/exchanges">Exchanges</Link>
             <Link to="/news">News</Link>

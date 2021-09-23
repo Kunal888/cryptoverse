@@ -34,7 +34,7 @@ function Navbar() {
       <div className="logo-container">
         <Avatar src={icon} size="large" />
         <Typography.Title level={2} className="logo">
-          <Link to="/">Cryptoverse</Link>
+          <Link to="/"></Link>
         </Typography.Title>
         <Button
           className="menu-control-container"
@@ -52,6 +52,9 @@ function Navbar() {
         >
           <Menu.Item icon={<HomeOutlined />}>
             <Link to="/">Home</Link>
+          </Menu.Item>
+          <Menu.Item icon={<FundOutlined />}>
+            <Link to="/stocks">Stocks</Link>
           </Menu.Item>
           <Menu.Item icon={<FundOutlined />}>
             <Link to="/cryptocurrencies">Cryptocurrencies</Link>

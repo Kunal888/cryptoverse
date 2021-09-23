@@ -23,7 +23,7 @@ function News({ simplified }) {
     <Row gutter={[24, 24]}>
       {!simplified && (
         <Col span={24}>
-          <Select
+          {/* <Select
             showSearch
             className="select-news"
             placeholder="Select a Crypto"
@@ -39,7 +39,7 @@ function News({ simplified }) {
                 {currency.name}
               </Select.Option>
             ))}
-          </Select>
+          </Select> */}
         </Col>
       )}
       {news?.value.map((news, i) => (

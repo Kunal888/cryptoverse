@@ -3,6 +3,7 @@ import { Typography, Row, Col, Statistic } from "antd";
 import { useGetCryptosQuery } from "../apis/cryptoApi";
 import Loader from "./Loader";
 import millify from "millify";
+import Stocks from "./Stocks";
 import Cryptocurrencies from "./Cryptocurrencies";
 import News from "./News";
 
@@ -14,7 +15,7 @@ function Home() {
 
   return (
     <div>
-      <div className="global-stats">
+      {/* <div className="global-stats">
         <Typography.Title level={2} className="heading">
           Global Crypto Stats
         </Typography.Title>
@@ -47,7 +48,16 @@ function Home() {
             />
           </Col>
         </Row>
+      </div> */}
+      <div className="home-heading-container">
+        <Typography.Title level={2} className="home-title">
+          Top 10 Stocks
+        </Typography.Title>
+        <Typography.Title level={3} className="show-more">
+          <Link to="/stocks">Show More</Link>
+        </Typography.Title>
       </div>
+      <Stocks simplified />
       <div className="home-heading-container">
         <Typography.Title level={2} className="home-title">
           Top 10 Cryptocurrencies
@@ -59,7 +69,7 @@ function Home() {
       <Cryptocurrencies simplified />
       <div className="home-heading-container">
         <Typography.Title level={2} className="home-title">
-          Latest Crypto News
+          Related News
         </Typography.Title>
         <Typography.Title level={3} className="show-more">
           <Link to="/news">Show More</Link>
