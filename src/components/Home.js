@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
-import { Typography, Row, Col, Statistic } from "antd";
+import { Typography } from "antd";
 import { useGetCryptosQuery } from "../apis/cryptoApi";
 import Loader from "./Loader";
-import millify from "millify";
 import Stocks from "./Stocks";
 import Cryptocurrencies from "./Cryptocurrencies";
 import News from "./News";
 
 function Home() {
   const { data, isFetching } = useGetCryptosQuery(10);
-  const stats = data?.data?.stats;
 
   if (isFetching) return <Loader />;
 
@@ -49,6 +47,7 @@ function Home() {
           </Col>
         </Row>
       </div> */}
+      {console.log(data)}
       <div className="home-heading-container">
         <Typography.Title level={2} className="home-title">
           Top 10 Stocks

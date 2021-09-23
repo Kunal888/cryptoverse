@@ -8,20 +8,23 @@ import { useGetStocksQuery } from "../apis/stockApi";
 
 function Stocks({ simplified }) {
   const { data, isFetching } = useGetStocksQuery();
-  let currentData = data?.slice(0, 100);
-  const [stocks, setStocks] = useState(currentData);
+  // let currentData = data?.slice(0, 100);
+  const [stocks, setStocks] = useState(data?.slice(0, 100));
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     if (simplified) {
-      setStocks(currentData?.slice(0, 10));
+      // const currentData = data?.slice(0, 10);
+      setStocks(data?.slice(0, 10));
     } else {
-      const filteredData = currentData?.filter((c) =>
-        c.symbol.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+      const filteredData = data
+        ?.slice(0, 100)
+        ?.filter((c) =>
+          c.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+        );
       setStocks(filteredData);
     }
-  }, [data, searchTerm]);
+  }, [data, searchTerm, simplified]);
 
   if (isFetching) return <Loader />;
 
